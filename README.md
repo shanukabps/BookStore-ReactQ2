@@ -47,3 +47,12 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### BUY NOW reference
 ![image](https://user-images.githubusercontent.com/64677946/102007732-96685f80-3d51-11eb-9013-eacd1b186240.png)
+
+### not found (unhappy path)
+
+![image](https://user-images.githubusercontent.com/64677946/102008098-0bd52f80-3d54-11eb-836c-41a413eb85dd.png)
+
+
+
+### responsive design
+![image](https://user-images.githubusercontent.com/64677946/102008116-26a7a400-3d54-11eb-9a07-3750d391563b.png)
