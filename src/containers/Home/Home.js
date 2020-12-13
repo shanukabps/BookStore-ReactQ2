@@ -160,7 +160,7 @@ function Home() {
               })}
             </div>
           </div>
-          <div className="wap">
+          <div className="wapserch">
             {searchBook.length !== 0
               ? searchBook.map((listbooks, i) => {
                   return (
