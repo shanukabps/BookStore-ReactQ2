@@ -43,13 +43,11 @@ function Home() {
   }, []);
 
   /**
-   * checked the session storage "topbooks" null or not ,if it is null , @param topbooks stored session storage
+   *  @param topbooks stored session storage
    *
    */
   useEffect(() => {
-    if (sessionStorage.getItem("topbooks") === null) {
-      sessionStorage.setItem("topbooks", JSON.stringify(topbooks));
-    }
+    sessionStorage.setItem("topbooks", JSON.stringify(topbooks));
   }, [bookcategory]);
 
   /**
@@ -114,7 +112,7 @@ function Home() {
       });
     });
   }
-
+  console.log(searchBook);
   return (
     // show the input search
     <div className="m-3">
@@ -145,67 +143,65 @@ function Home() {
  
  */}
       {bookcategory ? (
-        <div>
-          <div className="d-flex">
-            <div className=" mr-auto"></div>
-            <div class="dropdown">
-              <button class="dropbtn">
-                <MenuIcon />
-              </button>
-              <div class="dropdown-content">
-                {bookcategory.map((list, i) => {
+        <div className="d-flex">
+          <div className=" mr-auto"></div>
+          <div className="dropdown">
+            <button className="dropbtn">
+              <MenuIcon />
+            </button>
+            <div className="dropdown-content">
+              {bookcategory.map((list, i) => {
+                return (
+                  <GetListName
+                    key={i + "homelistname"}
+                    list_name={list.list_name}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className="wap">
+            {searchBook.length !== 0
+              ? searchBook.map((listbooks, i) => {
                   return (
-                    <GetListName
-                      key={i + "homelistname"}
-                      list_name={list.list_name}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-            <div className="wap border-right border-dark">
-              {searchBook.length !== 0
-                ? searchBook.map((listbooks, i) => {
-                    return (
-                      <div>
-                        <GetTopSellBooks
-                          key={"sa" + i + "searchbooks"}
-                          author={listbooks.author}
-                          book_image={listbooks.book_image}
-                          publisher={listbooks.publisher}
-                          title={listbooks.title}
-                          rank={listbooks.rank_last_week}
-                          isbn={listbooks.primary_isbn10}
-                        />
-                      </div>
-                    );
-                  })
-                : ""}
-            </div>
-            <div className=" p-2 mt-1 mr-auto">
-              <div>
-                <h4 className="text-primary mb-5 text-center">
-                  TOP BOOKS THE BEST SELLERS LISTS IN LAST WEEKS
-                </h4>
-              </div>
-              <div className="wap">
-                {bookcategory.map((list, i) => {
-                  return list.books.slice(0, 1).map((listbooks) => {
-                    return (
+                    <div className="border-right border-dark mt-1 mr-1">
                       <GetTopSellBooks
-                        key={"2a" + i + "books"}
+                        key={"sa" + i + "searchbooks"}
                         author={listbooks.author}
                         book_image={listbooks.book_image}
                         publisher={listbooks.publisher}
                         title={listbooks.title}
-                        list_name={list.list_name}
                         rank={listbooks.rank_last_week}
                         isbn={listbooks.primary_isbn10}
                       />
-                    );
-                  });
-                })}
-              </div>
+                    </div>
+                  );
+                })
+              : ""}
+          </div>
+          <div className=" p-2 mt-1 mr-auto">
+            <div>
+              <h4 className="text-primary mb-5 text-center">
+                TOP BOOKS THE BEST SELLERS LISTS IN LAST WEEKS
+              </h4>
+            </div>
+            <div className="wap">
+              {bookcategory.map((list, i) => {
+                return list.books.slice(0, 1).map((listbooks) => {
+                  return (
+                    <GetTopSellBooks
+                      key={"2a" + i + "books"}
+                      author={listbooks.author}
+                      book_image={listbooks.book_image}
+                      publisher={listbooks.publisher}
+                      title={listbooks.title}
+                      list_name={list.list_name}
+                      rank={listbooks.rank_last_week}
+                      isbn={listbooks.primary_isbn10}
+                    />
+                  );
+                });
+              })}
             </div>
           </div>
         </div>
