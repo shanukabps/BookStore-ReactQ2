@@ -112,11 +112,11 @@ function Home() {
       });
     });
   }
-  console.log(searchBook);
+
   return (
     // show the input search
     <div className="m-3">
-      <div class="input-group ">
+      <div className="input-group ">
         <div className="input-group-prepend">
           <span className="input-group-text" id="basic-addon1">
             <SearchIcon />
@@ -161,28 +161,26 @@ function Home() {
             </div>
           </div>
           <div className="wapserch">
-            {searchBook.length !== 0
-              ? searchBook.map((listbooks, i) => {
-                  return (
-                    <div className="border-right border-dark mt-1 mr-1">
-                      <GetTopSellBooks
-                        key={"sa" + i + "searchbooks"}
-                        author={listbooks.author}
-                        book_image={listbooks.book_image}
-                        publisher={listbooks.publisher}
-                        title={listbooks.title}
-                        rank={listbooks.rank_last_week}
-                        isbn={listbooks.primary_isbn10}
-                      />
-                    </div>
-                  );
-                })
-              : ""}
+            {searchBook.length !== 0 ? (
+              <div className="border-right  mt-1 mr-1">
+                <GetTopSellBooks
+                  key={"sa" + 1 + "searchbooks"}
+                  author={searchBook[0].author}
+                  book_image={searchBook[0].book_image}
+                  publisher={searchBook[0].publisher}
+                  title={searchBook[0].title}
+                  rank={searchBook[0].rank_last_week}
+                  isbn={searchBook[0].primary_isbn10}
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           <div className=" p-2 mt-1 mr-auto">
             <div>
               <h4 className="text-primary mb-5 text-center">
-                TOP BOOKS THE BEST SELLERS LISTS IN LAST WEEKS
+                TOP SOLD BOOK IN EACH LIST
               </h4>
             </div>
             <div className="wap">
