@@ -29,3 +29,19 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 #### can search books 
 
 ![image](https://user-images.githubusercontent.com/64677946/102007621-a895ce00-3d50-11eb-8d5f-9fc21f98f3ef.png)
+
+
+#### Dropdown to SELET LIST NAME
+
+![image](https://user-images.githubusercontent.com/64677946/102007706-63be6700-3d51-11eb-8f39-50a9464915fe.png)
+
+
+#### View book Specific Category
+![image](https://user-images.githubusercontent.com/64677946/102007713-72a51980-3d51-11eb-9913-412221b11dfc.png)
+
+#### View more details about book
+![image](https://user-images.githubusercontent.com/64677946/102007723-85b7e980-3d51-11eb-851f-d395533ad6cc.png)
+
+
+#### BUY NOW reference
+![image](https://user-images.githubusercontent.com/64677946/102007732-96685f80-3d51-11eb-9013-eacd1b186240.png)
